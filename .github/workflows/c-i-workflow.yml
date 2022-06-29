@@ -11,11 +11,12 @@ jobs:
     - name: build
       run: dotnet build
     
+    
     - name: NPM build/install
       run: 
-        cd DotnetTemplate.web
         npm install
         npm run build
+      working-directory: ./DotnetTemplate.web
 
     - name: Run C# tests
       run: dotnet test
