@@ -4,11 +4,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'git clone https://github.com/Philw10/DevOps-Course-Workshop-Module-07-Learners.git'
-                sh 'dotnet build'
+                bat 'git clone https://github.com/Philw10/DevOps-Course-Workshop-Module-07-Learners.git'
+                bat 'dotnet build'
                 dir ('DotnetTemplate.web') {
-                    sh 'npm install'
-                    sh 'npm run build'
+                    bat 'npm install'
+                    bat 'npm run build'
                 }
             }
         }
