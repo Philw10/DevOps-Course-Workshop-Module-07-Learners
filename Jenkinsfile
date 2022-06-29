@@ -14,13 +14,13 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                bat 'dotnet test'
+                dir ('DotnetTemplate.web') {
+                    bat 'npm t'
+                    bat 'npm run lint'
+                }
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+        
     }
 }
